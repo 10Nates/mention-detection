@@ -1,0 +1,14 @@
+{
+    "name": "Mention Cypher",
+    "version": "1.0.0",
+    "description": "yeah basically",
+    "main": "index.js",
+    "scripts": {
+        "test": " "
+    },
+    "author": "Nate B",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^11.3.2"
+    }
+}
