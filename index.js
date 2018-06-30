@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-
+const numword = require('number-to-words').toWords
 bot.on('message', (message) => {
     const args = message.content.slice().trim().split(/ +/g);
     const command = args.shift().toLowerCase();
@@ -61,6 +61,22 @@ bot.on('message', (message) => {
         }
     }
 
+    //Mention Response System for Owen's bot, by https://www.github.com/10Nates
+    
+    if (command === '!owenexample') {
+        if (memberdetect()) {
+            if (roledetect()) {
+                var rolelist = message.guild.roles.get(args[0].replace(/<@&|>/g, '')).members.map(m => m.user.tag).length;
+                console.log(rolelist)
+                message.channel.send(`<@${message.author.id}> is now having ${numword(rolelist)}somes with ${args[0]}.`)
+            } else {
+                message.channel.send(`<@${message.author.id}> is now in a relationship with ${args[0]}.`)
+            }
+        } else {
+            message.channel.send("That isn't someone!")
+        }
+    }
+
 });
 
-bot.login('NotyourbotgxDDYzjigyMDQ0.doot-g.edcBqqqUwUABcd00bigzig_r-ZZ')
+bot.login('notyourbotxxDDDDjiggyDQ4.Downup.webMD1800lifeiQAmenMEZZZZZZZ')
